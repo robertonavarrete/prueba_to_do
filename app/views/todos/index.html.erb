@@ -12,6 +12,11 @@
         <p class="card-text">  <%= todo.completed%> </p>
         <%=link_to "edit", edit_todo_path(todo)%>
         <%=link_to "show", show_todo_path(todo)%>
+         <% if todo.completed == true %>
+        <%=link_to "incompleted" , complete_todo_path(todo) %>
+        <% else %>
+        <%=link_to "completed", complete_todo_path(todo) %>
+      <%end%>
       <%=link_to "delete", delete_todo_path(todo), method: :delete, data:{confirm: 'Estas seguro?'}%>
 
       </div>
