@@ -1,5 +1,5 @@
 class TodosController < ApplicationController
-    before_action :set_todo, only: [:show, :edit, :update]
+    before_action :set_todo, only: [:show, :edit, :update, :destroy]
 
     def index
     @todos= Todo.all
@@ -12,6 +12,7 @@ class TodosController < ApplicationController
     def create
         @todo = Todo.new(todo_params)
         @todo.save
+        redirect_to root_path
     end
     
     def show 
@@ -22,7 +23,12 @@ class TodosController < ApplicationController
 
     def update 
     @todo.update(todo_params)
-    redirect_to show_todo_path
+    redirect_to root_path
+    end
+
+    def destroy 
+        @todo.destroy
+        redirect_to root_path
     end
 
 
