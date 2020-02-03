@@ -14,9 +14,9 @@
             <h5 class="card-title">Completed</h5>
             <p class="card-text">  <%= todo.completed%> 
                 <% if todo.completed == true %>
-                <%=link_to "Incompleta" , complete_todo_path(todo),class:'btn btn-outline-warning m-1' %>
+                <%=link_to "Coompletada" , complete_todo_path(todo),class:'btn btn-outline-success m-1' %>
                 <% else %>
-                <%=link_to "Completada", complete_todo_path(todo),class: 'btn btn-outline-success m-1'  %>
+                <%=link_to "Incompleta", complete_todo_path(todo),class: 'btn btn-outline-warning m-1'  %>
             <%end%></p>
             <%=link_to "Editar", edit_todo_path(todo), class:'btn btn-outline-primary m-1'%>
             <%=link_to "Ver", show_todo_path(todo), class: 'btn btn-outline-info'%>
@@ -46,9 +46,9 @@
             <h5 class="card-title">Completed</h5>
             <p class="card-text">  <%= todo.completed%> 
                 <% if todo.completed == true %>
-                <%=link_to "Incompleta" , complete_todo_path(todo) ,class:'btn btn-outline-warning m-1'%>
+                <%=link_to "Completada" , complete_todo_path(todo) ,class:'btn btn-outline-success m-1'%>
                 <% else %>
-                <%=link_to "Completada", complete_todo_path(todo) ,class: 'btn btn-outline-success m-1' %>
+                <%=link_to "Incompleta", complete_todo_path(todo) ,class: 'btn btn-outline-warning m-1' %>
             <%end%></p>
             <%=link_to "Editar", edit_todo_path(todo), class:'btn btn-outline-primary m-1'%>
             <%=link_to "Ver", show_todo_path(todo), class: 'btn btn-outline-info'%>

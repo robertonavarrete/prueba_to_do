@@ -10,9 +10,9 @@
         <p class="card-text">  <%= todo.description%> </p>
         <h5 class="card-title">Estado</h5>
         <% if todo.completed == true %>
-        <%=link_to "Incompleta" , complete_todo_path(todo),class:'btn btn-outline-warning m-1' %>
+        <%=link_to "Completada" , complete_todo_path(todo),class:'btn btn-outline-success m-1' %>
         <% else %>
-        <%=link_to "Completada", complete_todo_path(todo),class: 'btn btn-outline-success m-1' %>
+        <%=link_to "Incompleta", complete_todo_path(todo),class: 'btn btn-outline-warning m-1' %>
       <%end%>
         <p class="card-text">  <%= todo.completed%> </p>
         <%=link_to "Editar", edit_todo_path(todo), class:'btn btn-outline-primary m-1'%>
