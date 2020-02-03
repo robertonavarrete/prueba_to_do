@@ -35,7 +35,12 @@ class TodosController < ApplicationController
         @todo.completed = !@todo.completed
         @todo.save
         redirect_to root_path
-  
+    end
+
+    def list
+        @todo_completed = Todo.where(completed: true)
+        @todo_incompleted = Todo.where(completed: false)
+
     end
 
 
