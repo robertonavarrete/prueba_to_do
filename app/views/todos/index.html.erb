@@ -10,6 +10,9 @@
         <p class="card-text">  <%= todo.description%> </p>
         <h5 class="card-title">Completed</h5>
         <p class="card-text">  <%= todo.completed%> </p>
+        <%=link_to "edit", edit_todo_path(todo)%>
+        <%=link_to "show", show_todo_path(todo)%>
+
       </div>
     </div>
 <%end%>

@@ -1,0 +1,11 @@
+<%= form_with(model:@todo, local:true) do |f| %>
+<%= f.label :description %>
+<%= f.text_field :description %>
+
+<%= f.label :completed %>
+<%= f.text_field :completed%>
+
+
+<% end %> 
+
+<%=link_to "Back", root_path%>
