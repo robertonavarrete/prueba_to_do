@@ -1,54 +1,65 @@
-<h1>Lista completados</h1>
-<% @todo_completed.each_slice(4) do |todo2|%>
-<div class="card-deck">
-    <% todo2.each do |todo|%>
+<div class="container">
+    <div class="row">
+    <div class = "col-6">
+    <h1 class='text-center'>Lista incompletada</h1>
+    <% @todo_incompleted.each_slice(2) do |todo2|%>
+    <div class="card-deck">
+        <% todo2.each do |todo|%>
 
-    <div class="card">
-      
-      <div class="card-body">
-        <h5 class="card-title">Description</h5>
-        <p class="card-text">  <%= todo.description%> </p>
-        <h5 class="card-title">Completed</h5>
-        <p class="card-text">  <%= todo.completed%> </p>
-        <%=link_to "edit", edit_todo_path(todo)%>
-        <%=link_to "show", show_todo_path(todo)%>
-         <% if todo.completed == true %>
-        <%=link_to "incompleted" , complete_todo_path(todo) %>
-        <% else %>
-        <%=link_to "completed", complete_todo_path(todo) %>
-      <%end%>
-      <%=link_to "delete", delete_todo_path(todo), method: :delete, data:{confirm: 'Estas seguro?'}%>
+        <div class="card">
+        
+        <div class="card-body">
+            <h5 class="card-title">Description</h5>
+            <p class="card-text">  <%= todo.description%> </p>
+            <h5 class="card-title">Completed</h5>
+            <p class="card-text">  <%= todo.completed%> </p>
+            <%=link_to "edit", edit_todo_path(todo)%>
+            <%=link_to "show", show_todo_path(todo)%>
+            <% if todo.completed == true %>
+            <%=link_to "incompleted" , complete_todo_path(todo) %>
+            <% else %>
+            <%=link_to "completed", complete_todo_path(todo) %>
+        <%end%>
+        <%=link_to "delete", delete_todo_path(todo), method: :delete, data:{confirm: 'Estas seguro?'}%>
 
-      </div>
+        </div>
+        </div>
+    <%end%>
     </div>
-<%end%>
-</div>
-<%end%> 
-<h1>Lista incompleta</h1>
-<% @todo_incompleted.each_slice(4) do |todo2|%>
-<div class="card-deck">
-    <% todo2.each do |todo|%>
-
-    <div class="card">
-      
-      <div class="card-body">
-        <h5 class="card-title">Description</h5>
-        <p class="card-text">  <%= todo.description%> </p>
-        <h5 class="card-title">Completed</h5>
-        <p class="card-text">  <%= todo.completed%> </p>
-        <%=link_to "edit", edit_todo_path(todo)%>
-        <%=link_to "show", show_todo_path(todo)%>
-         <% if todo.completed == true %>
-        <%=link_to "incompleted" , complete_todo_path(todo) %>
-        <% else %>
-        <%=link_to "completed", complete_todo_path(todo) %>
-      <%end%>
-      <%=link_to "delete", delete_todo_path(todo), method: :delete, data:{confirm: 'Estas seguro?'}%>
-
-      </div>
+    <%end%> 
     </div>
-<%end%>
-</div>
-<%end%> 
+        
 
-<%=link_to "back", root_path%>
+    <div class = "col-6">
+    <h1 class="text-center">Lista completada</h1>
+    <% @todo_completed.each_slice(2) do |todo2|%>
+    <div class="card-deck">
+        <% todo2.each do |todo|%>
+
+        <div class="card">
+        
+        <div class="card-body">
+            <h5 class="card-title">Description</h5>
+            <p class="card-text">  <%= todo.description%> </p>
+            <h5 class="card-title">Completed</h5>
+            <p class="card-text">  <%= todo.completed%> </p>
+            <%=link_to "edit", edit_todo_path(todo)%>
+            <%=link_to "show", show_todo_path(todo)%>
+            <% if todo.completed == true %>
+            <%=link_to "incompleted" , complete_todo_path(todo) %>
+            <% else %>
+            <%=link_to "completed", complete_todo_path(todo) %>
+        <%end%>
+        <%=link_to "delete", delete_todo_path(todo), method: :delete, data:{confirm: 'Estas seguro?'}%>
+
+        </div>
+        </div>
+    <%end%>
+    </div>
+    <%end%> 
+    </div>
+</div>
+</div>
+
+
+
