@@ -1,0 +1,21 @@
+<h1>Todos Post</h1>
+<% @todos.each_slice(4) do |todo2|%>
+<div class="card-deck">
+    <% todo2.each do |todo|%>
+
+    <div class="card">
+      
+      <div class="card-body">
+        <h5 class="card-title">Description</h5>
+        <p class="card-text">  <%= todo.description%> </p>
+        <h5 class="card-title">Completed</h5>
+        <p class="card-text">  <%= todo.completed%> </p>
+      </div>
+    </div>
+<%end%>
+</div>
+<%end%> 
+
+<%=link_to "new", todos_new_path%>
+
+
